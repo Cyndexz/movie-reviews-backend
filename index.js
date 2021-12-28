@@ -5,6 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import postRoutes from './routes/posts.js';
+import userRoutes from './routes/users.js';
 
 //So no we are able to use this as an instance
 const app = express();
@@ -17,6 +18,7 @@ app.use(cors());    //so we can call it as a function
 
 //to conenct this to our application /posts being the starting path for all routes inside of post.js
 app.use('/posts', postRoutes);
+app.use('/users', userRoutes);
 
 app.get('/', (req,res) => {
     res.send('Hello to Movie Reviws API');

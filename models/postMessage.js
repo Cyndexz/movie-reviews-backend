@@ -4,16 +4,17 @@ import mongoose from 'mongoose';
 const postSchema = mongoose.Schema({
     title: String,
     message: String,
+    name: String,
     creator: String,
     tags: [String],         //Array of strings
     selectedFile: String,   //Convert image into a string using base64
-    likeCount: {            //object
-        type: Number,
-        default: 0
+    likes: {            //object
+        type: [String],
+        default: [],
     },
     createdAt: {            //object
         type: Date,
-        default: new Date()
+        default: new Date(),
     },
 });
 
