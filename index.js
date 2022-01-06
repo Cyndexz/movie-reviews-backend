@@ -9,7 +9,7 @@ import userRoutes from './routes/users.js';
 
 //So no we are able to use this as an instance
 const app = express();
-dotenv.config();
+require('dotenv').config();
 
 //Used to properly send out requests
 app.use(bodyParser.json({limit: "30mb", extended: true}));
@@ -24,8 +24,6 @@ app.get('/', (req,res) => {
     res.send('Hello to Movie Reviws API');
 });
 
-//real applications creditenals should not be stored here and should be secured
-// const CONNECTION_URL = 'mongodb+srv://cyntax:ieD6QtjKrKzQTUuY@cluster0.uskjs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000; //only using 5000 right now until we push and then it will auto populate
 
 //mongoose.connect(CONNECTION_URL).then(()=>{console.log('...')})
@@ -35,4 +33,4 @@ mongoose.connect(process.env.CONNECTION_URL, {useNewUrlParser: true, useUnifiedT
     .catch((error) => console.log(error.message));  //if the connection to the database is not successful and will simply show an error message
 
 //Makes sure we do not get any warnings in our console
-// mongoose.set('useFindAndModify', false);
+//mongoose.set('useFindAndModify', false);
