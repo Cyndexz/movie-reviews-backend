@@ -14,6 +14,7 @@ require('dotenv').config();
 //Used to properly send out requests
 app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
+var cors = require('cors')
 app.use(cors());    //so we can call it as a function
 
 //to conenct this to our application /posts being the starting path for all routes inside of post.js
