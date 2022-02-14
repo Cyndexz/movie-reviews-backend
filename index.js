@@ -25,7 +25,7 @@ app.get('/', (req,res) => {
     res.send('Hello to Movie Reviws API');
 });
 
-const PORT = process.env.PORT || 5000; //only using 5000 right now until we push and then it will auto populate
+const PORT = listen(process.env.PORT || 5000); //only using 5000 right now until we push and then it will auto populate
 
 //mongoose.connect(CONNECTION_URL).then(()=>{console.log('...')})
 
