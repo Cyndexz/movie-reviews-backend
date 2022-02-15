@@ -9,7 +9,7 @@ import userRoutes from './routes/users.js';
 
 //So no we are able to use this as an instance
 const app = express();
-require('dotenv').config();
+dotenv.config();
 
 //Used to properly send out requests
 app.use(bodyParser.json({limit: "30mb", extended: true}));
