@@ -114,6 +114,8 @@ export const commentPost = async (req,res) => {
     const post = await PostMessage.findById(id);    //Getting the post from the database
 
     const updatedPost = await PostMessage.findByIdAndUpdate(id, post, {new: true})     //Upadting the the post in our variable
+    
+    post.comments.push(value);          //Adding the comments to the post
 
     res.json(updatedPost);
 }
